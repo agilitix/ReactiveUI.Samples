@@ -8,10 +8,10 @@
                      xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                      DataContext="{Binding ViewModel, RelativeSource={RelativeSource Self}}"
-                     BorderThickness="1.5"
+                     BorderThickness="1"
                      ResizeMode="CanResizeWithGrip"
                      GlowBrush="{DynamicResource AccentColorBrush}"
-                     Title="MainWindow" Height="300" Width="400">
+                     Title="MainWindow" Height="350" Width="450">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,17 +19,16 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
 
                 <!-- Material -->
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ComboBox.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.DataGrid.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Lime.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
 
                 <!-- Compatibility -->
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Defaults.xaml" />
@@ -37,7 +36,7 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <Button Content="Close" Click="ButtonClose_OnClick" Margin="0,0,10,10" HorizontalAlignment="Right" Width="75" Height="24" VerticalAlignment="Bottom" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="52,41,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+        <Button Content="Close" Click="ButtonClose_OnClick" Margin="0,0,15,15" HorizontalAlignment="Right" Width="75" Height="24" VerticalAlignment="Bottom" />
+        <TextBox Text="{Binding Path=DateInfo}" HorizontalAlignment="Left" Height="23" Margin="52,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
     </Grid>
 </mahapps:MetroWindow>
