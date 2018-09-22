@@ -19,18 +19,19 @@ using WpfCustomControl.Views;
 
 namespace WpfCustomControl
 {
-    public class Bootstrapper : IBootstrapper
+    public class Bootstrapping : IBootstrapping
     {
         protected readonly IUnityContainer _unity;
 
-        public Bootstrapper(IScheduler uiScheduler)
+        public Bootstrapping(IScheduler uiScheduler)
         {
             _unity = new UnityContainer();
 
             _unity.RegisterInstance(uiScheduler);
-            _unity.RegisterType<ITimerModel, TimerModel>(new SingletonLifetimeManager());
-            _unity.RegisterType<IMainWindowViewModel, MainWindowViewModel>(new SingletonLifetimeManager());
-            _unity.RegisterType<IViewFor<IMainWindowViewModel>, MainWindow>(new SingletonLifetimeManager());
+
+            _unity.RegisterSingleton<ITimerModel, TimerModel>();
+            _unity.RegisterSingleton<IMainWindowViewModel, MainWindowViewModel>();
+            _unity.RegisterSingleton<IViewFor<IMainWindowViewModel>, MainWindow>();
         }
 
         public void Startup()

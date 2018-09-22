@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using System.Windows.Forms.Integration;
 using System.Windows.Threading;
 using WpfCustomControl;
-using MainWindow = WpfCustomControl.Views.MainWindow;
 
 namespace WinFormsHost
 {
@@ -20,7 +19,7 @@ namespace WinFormsHost
             // UI scheduler.
             IScheduler mainScheduler = new DispatcherScheduler(Dispatcher.CurrentDispatcher);
 
-            IBootstrapper boot = new Bootstrapper(mainScheduler);
+            IBootstrapping boot = new Bootstrapping(mainScheduler);
             boot.Startup();
             boot.Dispose();
         }

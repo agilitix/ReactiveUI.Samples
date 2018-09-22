@@ -2,7 +2,7 @@
 
 namespace WpfCustomControl
 {
-    public interface IBootstrapper : IDisposable
+    public interface IBootstrapping : IDisposable
     {
         void Startup();
     }
