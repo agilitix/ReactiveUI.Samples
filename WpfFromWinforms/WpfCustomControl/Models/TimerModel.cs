@@ -9,7 +9,7 @@ using System.Timers;
 
 namespace WpfCustomControl.Models
 {
-    public class TimerModel
+    public class TimerModel : ITimerModel
     {
         public IObservable<DateTime> CurrentDateTime { get; }
 
@@ -17,6 +17,10 @@ namespace WpfCustomControl.Models
         {
             CurrentDateTime = Observable.Interval(TimeSpan.FromSeconds(1), NewThreadScheduler.Default)
                                         .Select(_ => DateTime.Now);
+        }
+
+        public void Dispose()
+        {
         }
     }
 }
