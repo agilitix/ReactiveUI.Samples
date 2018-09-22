@@ -19,10 +19,10 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
 
                 <!-- Material -->
-                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
@@ -36,7 +36,10 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <Button Content="Close" Click="ButtonClose_OnClick" Margin="0,0,15,15" HorizontalAlignment="Right" Width="75" Height="24" VerticalAlignment="Bottom" />
+        <Button Content="Close" Click="ButtonClose_OnClick"
+                Style="{DynamicResource MaterialDesignRaisedButton}"
+                materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                Margin="0,0,15,15" HorizontalAlignment="Right" Width="75" Height="24" VerticalAlignment="Bottom" />
         <TextBox Text="{Binding Path=DateInfo}" HorizontalAlignment="Left" Height="23" Margin="52,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
     </Grid>
 </mahapps:MetroWindow>

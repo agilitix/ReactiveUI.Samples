@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace WpfCustomControl.Models
 
         public TimerModel()
         {
-            CurrentDateTime = Observable.Interval(TimeSpan.FromSeconds(1)) // Should be produced in a background thread.
+            CurrentDateTime = Observable.Interval(TimeSpan.FromSeconds(1), NewThreadScheduler.Default)
                                         .Select(_ => DateTime.Now);
         }
     }
